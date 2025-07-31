@@ -732,6 +732,10 @@ figcaption {
 }
 
 @media screen and (max-width: 479px) {
+  .box.wizytowki {
+    display: none;
+  }
+
   .grid-component {
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
@@ -744,6 +748,10 @@ figcaption {
 
   .text-title {
     line-height: 1.25rem;
+  }
+
+  .intro-footer {
+    width: 100%;
   }
 }
 
