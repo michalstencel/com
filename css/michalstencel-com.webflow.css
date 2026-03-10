@@ -17,6 +17,7 @@
   --background-colors--bg-box: var(--base-colors--black-lighter);
   --text-colors--brand-colors--brand-color-strony: var(--base-colors--violet);
   --text-colors--brand-colors--brand-color-brandingi: var(--base-colors--orange);
+  --base-colors--white: white;
   --base-colors--green-light: #3ecf8e;
   --border-colors--border-tag: var(--base-colors--gray);
   --background-colors--bg-tag: var(--base-colors--gray-darkest);
@@ -30,7 +31,6 @@
   --base-colors--green: #148253;
   --base-colors--black: #121212;
   --base-colors--black-lighter: #171717;
-  --base-colors--white: white;
   --base-colors--gray-lighter: #b4b4b4;
   --base-colors--gray-light-hover: #636363;
   --base-colors--gray-light: #363636;
@@ -324,7 +324,7 @@ figcaption {
 }
 
 .box.me {
-  background-image: url('../images/1x776x425-photo.jpg');
+  background-image: url('../images/1x776x425-photo.avif');
   background-position: 50%;
   background-size: cover;
 }
@@ -355,8 +355,8 @@ figcaption {
 }
 
 .box.wizytowki {
+  background-color: var(--base-colors--white);
   color: #2d62ff;
-  background-color: #007aff;
   justify-content: center;
   align-items: center;
 }
