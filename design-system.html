@@ -1,5 +1,5 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Sun Sep 13 2026 11:11:13 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="6a953a28edcdfa413dbb382a" data-wf-site="6a953a28edcdfa413dbb37f8">
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Sun Sep 13 2026 11:43:42 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="6aa68626b99f851f46202fcd" data-wf-site="6aa68626b99f851f46202fee">
 <head>
   <meta charset="utf-8">
   <title>Design System – Colors, Typography &amp; Components</title>
@@ -9,7 +9,7 @@
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/michalstencel-com-55ed8d0-f3958362885f0.webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/michalstencel-com-55ed8d0-8d3f53da87816.webflow.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -23,6 +23,49 @@
   <link href="images/webclip.png" rel="icon" type="image/png" sizes="512x512">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-JPH8L5FX9H"></script>
   <script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('set', 'developer_id.dZGVlNj', true);gtag('js', new Date());gtag('config', 'G-JPH8L5FX9H');</script>
+  <script>
+(function () {
+  var FROM = '1440px';
+  var TO = '1600px';
+  function patch(sheet) {
+    var rules;
+    try { rules = sheet.cssRules; } catch (e) { return false; }
+    if (!rules) return false;
+    var changed = 0;
+    for (var i = 0; i < rules.length; i++) {
+      var r = rules[i];
+      if (r.type === CSSRule.MEDIA_RULE && r.media.mediaText.indexOf(FROM) !== -1) {
+        r.media.mediaText = r.media.mediaText.split(FROM).join(TO);
+        changed++;
+      }
+    }
+    return changed > 0;
+  }
+  function run() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      var link = links[i];
+      if (!/website-files\.com/.test(link.href)) continue;
+      var clone = document.createElement('link');
+      clone.rel = 'stylesheet';
+      clone.href = link.href;
+      clone.crossOrigin = 'anonymous';
+      clone.onload = (function (orig, c) {
+        return function () {
+          if (patch(c.sheet)) orig.disabled = true;
+          else c.remove();
+        };
+      })(link, clone);
+      link.parentNode.insertBefore(clone, link.nextSibling);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+</script>
 </head>
 <body>
   <div class="page-wrapper">
@@ -264,7 +307,7 @@ margin: 0rem !important;
             </svg></div>
         </a>
       </div>
-      <nav id="w-node-_338fc36a-06f9-a89b-7c94-15cd187a3747-3dbb382a" class="card nav-wrapper">
+      <nav id="w-node-_338fc36a-06f9-a89b-7c94-15cd187a3747-46202fcd" class="card nav-wrapper">
         <div class="design-nav_list">
           <a href="#overview" class="button icon w-inline-block">
             <p class="button_label">Overview</p>
@@ -428,7 +471,7 @@ margin: 0rem !important;
           </a>
         </div>
       </nav>
-      <div id="w-node-_77afbb31-a4da-98e6-b77a-baa4c0c028c2-3dbb382a" class="design-system_sections">
+      <div id="w-node-_77afbb31-a4da-98e6-b77a-baa4c0c028c2-46202fcd" class="design-system_sections">
         <section id="overview" class="section_overview">
           <div class="container-large">
             <div class="padding-global padding-bottom-medium">
@@ -800,140 +843,140 @@ margin: 0rem !important;
                   <h3 class="design-system-h3">Buttons</h3>
                 </div>
                 <div class="components_grid">
-                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784a3-3dbb382a" class="design-label secondary align-center">-</p>
-                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784a5-3dbb382a" class="design-label secondary align-center">-</p>
-                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784a7-3dbb382a" class="design-label secondary align-center">-</p>
-                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784a9-3dbb382a" class="design-label secondary align-center">-</p>
-                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784ab-3dbb382a" class="design-label secondary align-left">.button</p>
-                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784ad-3dbb382a" class="design-label secondary align-left">.button.cta</p>
-                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784af-3dbb382a" class="design-label secondary align-left">.button.disabled</p>
-                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784b1-3dbb382a" class="design-label secondary align-left">.button.ghost</p>
-                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784b3-3dbb382a" class="design-label secondary align-left">.button.download</p>
-                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784b5-3dbb382a" class="design-label secondary align-left">.button.mail</p>
-                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784b7-3dbb382a" class="design-label secondary align-left">.button.list-item</p>
-                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784b9-3dbb382a" class="design-label secondary align-center">.icon</p>
-                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784bb-3dbb382a" class="design-label secondary align-center">.badge</p>
-                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784bd-3dbb382a" class="design-label secondary align-center">.icon-only</p>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784bf-3dbb382a" href="#" class="button w-inline-block">
+                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784a3-46202fcd" class="design-label secondary align-center">-</p>
+                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784a5-46202fcd" class="design-label secondary align-center">-</p>
+                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784a7-46202fcd" class="design-label secondary align-center">-</p>
+                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784a9-46202fcd" class="design-label secondary align-center">-</p>
+                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784ab-46202fcd" class="design-label secondary align-left">.button</p>
+                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784ad-46202fcd" class="design-label secondary align-left">.button.cta</p>
+                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784af-46202fcd" class="design-label secondary align-left">.button.disabled</p>
+                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784b1-46202fcd" class="design-label secondary align-left">.button.ghost</p>
+                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784b3-46202fcd" class="design-label secondary align-left">.button.download</p>
+                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784b5-46202fcd" class="design-label secondary align-left">.button.mail</p>
+                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784b7-46202fcd" class="design-label secondary align-left">.button.list-item</p>
+                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784b9-46202fcd" class="design-label secondary align-center">.icon</p>
+                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784bb-46202fcd" class="design-label secondary align-center">.badge</p>
+                  <p id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784bd-46202fcd" class="design-label secondary align-center">.icon-only</p>
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784bf-46202fcd" href="#" class="button w-inline-block">
                     <p class="button_label">Label</p>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784c2-3dbb382a" href="#" class="button ghost w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784c2-46202fcd" href="#" class="button ghost w-inline-block">
                     <p class="button_label">Label</p>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784c5-3dbb382a" href="#" class="button download w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784c5-46202fcd" href="#" class="button download w-inline-block">
                     <p class="button_label lg">Download</p>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784c8-3dbb382a" href="#" class="button list-item w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784c8-46202fcd" href="#" class="button list-item w-inline-block">
                     <p class="button_label mono text-color-secondary">label</p>
                     <p class="button_label mono text-color-primary">second.label</p>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784cd-3dbb382a" href="#" class="button list-item w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784cd-46202fcd" href="#" class="button list-item w-inline-block">
                     <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewbox="0 0 13 13" fill="none">
                         <path d="M3.25 9.75L9.75 3.25M9.75 7.58333V3.25H5.41667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></div>
                     <p class="button_label mono text-color-secondary">label</p>
                     <p class="button_label mono text-color-primary">second.label</p>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784d3-3dbb382a" href="#" class="button mail w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784d3-46202fcd" href="#" class="button mail w-inline-block">
                     <p class="button_label lg mono">mail@domain.com</p>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784d6-3dbb382a" href="#" class="button mail w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784d6-46202fcd" href="#" class="button mail w-inline-block">
                     <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 14 14" fill="none">
                         <path d="M3.75 0.5H8.87778C10.4957 0.5 11.3047 0.5 11.9226 0.81487C12.4662 1.09184 12.9082 1.53378 13.1851 2.07736C13.5 2.69533 13.5 3.50429 13.5 5.12222V10.25M2.81111 13.5H8.66111C9.47008 13.5 9.87456 13.5 10.1835 13.3426C10.4553 13.2041 10.6763 12.9831 10.8148 12.7113C10.9722 12.4023 10.9722 11.9979 10.9722 11.1889V5.33889C10.9722 4.52992 10.9722 4.12544 10.8148 3.81646C10.6763 3.54467 10.4553 3.3237 10.1835 3.18521C9.87456 3.02778 9.47008 3.02778 8.66111 3.02778H2.81111C2.00215 3.02778 1.59766 3.02778 1.28868 3.18521C1.01689 3.3237 0.795919 3.54467 0.657435 3.81646C0.5 4.12544 0.5 4.52992 0.5 5.33889V11.1889C0.5 11.9979 0.5 12.4023 0.657435 12.7113C0.795919 12.9831 1.01689 13.2041 1.28868 13.3426C1.59766 13.5 2.00215 13.5 2.81111 13.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></div>
                     <p class="button_label lg mono">mail@domain.com</p>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784da-3dbb382a" href="#" class="button mail icon-only w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784da-46202fcd" href="#" class="button mail icon-only w-inline-block">
                     <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 14 14" fill="none">
                         <path d="M3.75 0.5H8.87778C10.4957 0.5 11.3047 0.5 11.9226 0.81487C12.4662 1.09184 12.9082 1.53378 13.1851 2.07736C13.5 2.69533 13.5 3.50429 13.5 5.12222V10.25M2.81111 13.5H8.66111C9.47008 13.5 9.87456 13.5 10.1835 13.3426C10.4553 13.2041 10.6763 12.9831 10.8148 12.7113C10.9722 12.4023 10.9722 11.9979 10.9722 11.1889V5.33889C10.9722 4.52992 10.9722 4.12544 10.8148 3.81646C10.6763 3.54467 10.4553 3.3237 10.1835 3.18521C9.87456 3.02778 9.47008 3.02778 8.66111 3.02778H2.81111C2.00215 3.02778 1.59766 3.02778 1.28868 3.18521C1.01689 3.3237 0.795919 3.54467 0.657435 3.81646C0.5 4.12544 0.5 4.52992 0.5 5.33889V11.1889C0.5 11.9979 0.5 12.4023 0.657435 12.7113C0.795919 12.9831 1.01689 13.2041 1.28868 13.3426C1.59766 13.5 2.00215 13.5 2.81111 13.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></div>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784dc-3dbb382a" href="#" class="button download w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784dc-46202fcd" href="#" class="button download w-inline-block">
                     <p class="button_label lg">Download</p>
                     <div class="badge-button">
                       <p class="button_badge-label">soon</p>
                     </div>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784e2-3dbb382a" href="#" class="button download w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784e2-46202fcd" href="#" class="button download w-inline-block">
                     <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 11 11" fill="currentColor">
                         <path d="M10.25 10.25H0.5M2.125 4.83333L5.375 8.08333L8.625 4.83333M5.375 8.08333V0.5" stroke="#B4B4B4" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></div>
                     <p class="button_label lg">Download</p>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784e6-3dbb382a" href="#" class="button ghost icon w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784e6-46202fcd" href="#" class="button ghost icon w-inline-block">
                     <p class="button_label">Label</p>
                     <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewbox="0 0 13 13" fill="none">
                         <path d="M3.25 9.75L9.75 3.25M9.75 7.58333V3.25H5.41667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></div>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784ea-3dbb382a" href="#" class="button ghost icon-only w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784ea-46202fcd" href="#" class="button ghost icon-only w-inline-block">
                     <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewbox="0 0 13 13" fill="none">
                         <path d="M3.25 9.75L9.75 3.25M9.75 7.58333V3.25H5.41667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></div>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784ec-3dbb382a" href="#" class="button ghost icon-only w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784ec-46202fcd" href="#" class="button ghost icon-only w-inline-block">
                     <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 11 11" fill="currentColor">
                         <path d="M10.25 10.25H0.5M2.125 4.83333L5.375 8.08333L8.625 4.83333M5.375 8.08333V0.5" stroke="#B4B4B4" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></div>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784ee-3dbb382a" href="#" class="button ghost badge w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784ee-46202fcd" href="#" class="button ghost badge w-inline-block">
                     <p class="button_label">Label</p>
                     <div class="badge-button">
                       <p class="button_badge-label">soon</p>
                     </div>
                   </a>
-                  <div id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784f4-3dbb382a" class="button disabled">
+                  <div id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784f4-46202fcd" class="button disabled">
                     <p class="button_label">Label</p>
                   </div>
-                  <div id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784f7-3dbb382a" class="button disabled icon">
+                  <div id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784f7-46202fcd" class="button disabled icon">
                     <p class="button_label">Label</p>
                     <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewbox="0 0 13 13" fill="none">
                         <path d="M3.25 9.75L9.75 3.25M9.75 7.58333V3.25H5.41667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></div>
                   </div>
-                  <div id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784fb-3dbb382a" class="button disabled icon-only">
+                  <div id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784fb-46202fcd" class="button disabled icon-only">
                     <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewbox="0 0 13 13" fill="none">
                         <path d="M3.25 9.75L9.75 3.25M9.75 7.58333V3.25H5.41667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></div>
                   </div>
-                  <div id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784fd-3dbb382a" class="button disabled badge">
+                  <div id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe52784fd-46202fcd" class="button disabled badge">
                     <p class="button_label">Label</p>
                     <div class="badge-button">
                       <p class="button_badge-label">soon</p>
                     </div>
                   </div>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe5278503-3dbb382a" href="#" class="button badge w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe5278503-46202fcd" href="#" class="button badge w-inline-block">
                     <p class="button_label">Label</p>
                     <div class="badge-button">
                       <p class="button_badge-label">soon</p>
                     </div>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe5278509-3dbb382a" href="#" class="button icon w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe5278509-46202fcd" href="#" class="button icon w-inline-block">
                     <p class="button_label">Label</p>
                     <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewbox="0 0 13 13" fill="none">
                         <path d="M3.25 9.75L9.75 3.25M9.75 7.58333V3.25H5.41667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></div>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe527850d-3dbb382a" href="#" class="button icon-only w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe527850d-46202fcd" href="#" class="button icon-only w-inline-block">
                     <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewbox="0 0 13 13" fill="none">
                         <path d="M3.25 9.75L9.75 3.25M9.75 7.58333V3.25H5.41667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></div>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe527850f-3dbb382a" href="#" class="button cta w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe527850f-46202fcd" href="#" class="button cta w-inline-block">
                     <p class="button_label">Label</p>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe5278512-3dbb382a" href="#" class="button cta icon w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe5278512-46202fcd" href="#" class="button cta icon w-inline-block">
                     <p class="button_label">Label</p>
                     <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewbox="0 0 13 13" fill="none">
                         <path d="M3.25 9.75L9.75 3.25M9.75 7.58333V3.25H5.41667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></div>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe5278516-3dbb382a" href="#" class="button cta icon-only w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe5278516-46202fcd" href="#" class="button cta icon-only w-inline-block">
                     <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewbox="0 0 13 13" fill="none">
                         <path d="M3.25 9.75L9.75 3.25M9.75 7.58333V3.25H5.41667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></div>
                   </a>
-                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe5278518-3dbb382a" href="#" class="button cta badge w-inline-block">
+                  <a id="w-node-_986ba2f8-6b13-153f-a61f-ba4fe5278518-46202fcd" href="#" class="button cta badge w-inline-block">
                     <p class="button_label">Label</p>
                     <div class="badge-button cta">
                       <p class="button_badge-label cta">soon</p>
@@ -944,22 +987,22 @@ margin: 0rem !important;
                   <h3 class="design-system-h3">Cards</h3>
                 </div>
                 <div class="components_grid cards">
-                  <p id="w-node-e05f396c-ab2f-7b8b-1546-cc37e90d59f5-3dbb382a" class="design-label secondary align-center">-</p>
-                  <p id="w-node-_48caff3c-ccb4-4036-ea4f-7b94f6272c9b-3dbb382a" class="design-label secondary align-center">.cta</p>
-                  <p id="w-node-_69805dba-64fb-c967-4dd9-03cde12b8103-3dbb382a" class="design-label secondary align-left align-top">.card</p>
-                  <div id="w-node-_65a09227-a97b-6b6b-60d8-57e92b8bb256-3dbb382a" class="card"></div>
-                  <div id="w-node-_00681d4c-7e5f-11de-fdc3-562cf0411c1e-3dbb382a" class="card cta design-system"></div>
+                  <p id="w-node-e05f396c-ab2f-7b8b-1546-cc37e90d59f5-46202fcd" class="design-label secondary align-center">-</p>
+                  <p id="w-node-_48caff3c-ccb4-4036-ea4f-7b94f6272c9b-46202fcd" class="design-label secondary align-center">.cta</p>
+                  <p id="w-node-_69805dba-64fb-c967-4dd9-03cde12b8103-46202fcd" class="design-label secondary align-left align-top">.card</p>
+                  <div id="w-node-_65a09227-a97b-6b6b-60d8-57e92b8bb256-46202fcd" class="card"></div>
+                  <div id="w-node-_00681d4c-7e5f-11de-fdc3-562cf0411c1e-46202fcd" class="card cta design-system"></div>
                 </div>
                 <div class="section_content-inside">
                   <div id="components-cards-headers" class="section-content_header">
                     <h4 class="design-system-h4">Cards -&gt; Headers</h4>
                   </div>
                   <div class="components_grid cards-headers">
-                    <p id="w-node-_45e99d85-a8e5-d554-50de-cc0678f238b1-3dbb382a" class="design-label secondary align-left">-</p>
-                    <p id="w-node-_45e99d85-a8e5-d554-50de-cc0678f238b3-3dbb382a" class="design-label secondary align-left">.relative</p>
-                    <p id="w-node-_78a06694-2362-6bdf-9722-d571342d1f08-3dbb382a" class="design-label secondary align-left">.icon-only</p>
-                    <p id="w-node-_45e99d85-a8e5-d554-50de-cc0678f238b5-3dbb382a" class="design-label secondary align-left">.header</p>
-                    <div id="w-node-b5a850a5-3c21-c883-7513-d70e5b5d355e-3dbb382a" class="header">
+                    <p id="w-node-_45e99d85-a8e5-d554-50de-cc0678f238b1-46202fcd" class="design-label secondary align-left">-</p>
+                    <p id="w-node-_45e99d85-a8e5-d554-50de-cc0678f238b3-46202fcd" class="design-label secondary align-left">.relative</p>
+                    <p id="w-node-_78a06694-2362-6bdf-9722-d571342d1f08-46202fcd" class="design-label secondary align-left">.icon-only</p>
+                    <p id="w-node-_45e99d85-a8e5-d554-50de-cc0678f238b5-46202fcd" class="design-label secondary align-left">.header</p>
+                    <div id="w-node-b5a850a5-3c21-c883-7513-d70e5b5d355e-46202fcd" class="header">
                       <div class="icon-1x1-small">
                         <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 24 24" fill="none">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9932 5.13581C9.9938 2.7984 6.65975 2.16964 4.15469 4.31001C1.64964 6.45038 1.29697 10.029 3.2642 12.5604C4.89982 14.6651 9.84977 19.1041 11.4721 20.5408C11.6536 20.7016 11.7444 20.7819 11.8502 20.8135C11.9426 20.8411 12.0437 20.8411 12.1361 20.8135C12.2419 20.7819 12.3327 20.7016 12.5142 20.5408C14.1365 19.1041 19.0865 14.6651 20.7221 12.5604C22.6893 10.029 22.3797 6.42787 19.8316 4.31001C17.2835 2.19216 13.9925 2.7984 11.9932 5.13581Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -967,7 +1010,7 @@ margin: 0rem !important;
                       </div>
                       <h2 class="header_label">Header label</h2>
                     </div>
-                    <div id="w-node-_053c4b00-f444-74a1-2557-c7c6def7d0c8-3dbb382a" class="header relative">
+                    <div id="w-node-_053c4b00-f444-74a1-2557-c7c6def7d0c8-46202fcd" class="header relative">
                       <div class="icon-1x1-small">
                         <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 24 24" fill="none">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9932 5.13581C9.9938 2.7984 6.65975 2.16964 4.15469 4.31001C1.64964 6.45038 1.29697 10.029 3.2642 12.5604C4.89982 14.6651 9.84977 19.1041 11.4721 20.5408C11.6536 20.7016 11.7444 20.7819 11.8502 20.8135C11.9426 20.8411 12.0437 20.8411 12.1361 20.8135C12.2419 20.7819 12.3327 20.7016 12.5142 20.5408C14.1365 19.1041 19.0865 14.6651 20.7221 12.5604C22.6893 10.029 22.3797 6.42787 19.8316 4.31001C17.2835 2.19216 13.9925 2.7984 11.9932 5.13581Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -975,7 +1018,7 @@ margin: 0rem !important;
                       </div>
                       <h2 class="header_label">Header label</h2>
                     </div>
-                    <div id="w-node-e1ae0fe6-2fda-1ae6-cf29-e1b8d29d2606-3dbb382a" class="header icon-only">
+                    <div id="w-node-e1ae0fe6-2fda-1ae6-cf29-e1b8d29d2606-46202fcd" class="header icon-only">
                       <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 24 24" fill="none">
                           <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9932 5.13581C9.9938 2.7984 6.65975 2.16964 4.15469 4.31001C1.64964 6.45038 1.29697 10.029 3.2642 12.5604C4.89982 14.6651 9.84977 19.1041 11.4721 20.5408C11.6536 20.7016 11.7444 20.7819 11.8502 20.8135C11.9426 20.8411 12.0437 20.8411 12.1361 20.8135C12.2419 20.7819 12.3327 20.7016 12.5142 20.5408C14.1365 19.1041 19.0865 14.6651 20.7221 12.5604C22.6893 10.029 22.3797 6.42787 19.8316 4.31001C17.2835 2.19216 13.9925 2.7984 11.9932 5.13581Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg></div>
@@ -986,15 +1029,15 @@ margin: 0rem !important;
                     <h4 class="design-system-h4">Cards + Headers</h4>
                   </div>
                   <div class="components_grid cards">
-                    <p id="w-node-b5e1803a-b124-20b9-8711-593f6dd00fbd-3dbb382a" class="design-label secondary align-center">.header</p>
-                    <p id="w-node-b5e1803a-b124-20b9-8711-593f6dd00fbf-3dbb382a" class="design-label secondary align-center">.header.relative</p>
-                    <p id="w-node-_1fbc0963-097d-67cc-e6ab-359b55c432d2-3dbb382a" class="design-label secondary align-center">.header.icon-only</p>
-                    <p id="w-node-b5e1803a-b124-20b9-8711-593f6dd00fc1-3dbb382a" class="design-label secondary align-left">.card</p>
-                    <p id="w-node-_1d2bb6af-a057-bc33-f8cc-7f41b0bccabf-3dbb382a" class="design-label secondary">-</p>
-                    <p id="w-node-efedd588-19ab-d44e-f5f8-2182a7f70a53-3dbb382a" class="design-label secondary">-</p>
-                    <p id="w-node-_337ee023-b7d3-2478-ec4b-e6a217cff0c0-3dbb382a" class="design-label secondary">-</p>
-                    <p id="w-node-_3c536018-fb04-d158-ed98-0b4b44aa14a5-3dbb382a" class="design-label secondary align-left">.card.padding-0</p>
-                    <div id="w-node-b5e1803a-b124-20b9-8711-593f6dd00fc3-3dbb382a" class="card">
+                    <p id="w-node-b5e1803a-b124-20b9-8711-593f6dd00fbd-46202fcd" class="design-label secondary align-center">.header</p>
+                    <p id="w-node-b5e1803a-b124-20b9-8711-593f6dd00fbf-46202fcd" class="design-label secondary align-center">.header.relative</p>
+                    <p id="w-node-_1fbc0963-097d-67cc-e6ab-359b55c432d2-46202fcd" class="design-label secondary align-center">.header.icon-only</p>
+                    <p id="w-node-b5e1803a-b124-20b9-8711-593f6dd00fc1-46202fcd" class="design-label secondary align-left">.card</p>
+                    <p id="w-node-_1d2bb6af-a057-bc33-f8cc-7f41b0bccabf-46202fcd" class="design-label secondary">-</p>
+                    <p id="w-node-efedd588-19ab-d44e-f5f8-2182a7f70a53-46202fcd" class="design-label secondary">-</p>
+                    <p id="w-node-_337ee023-b7d3-2478-ec4b-e6a217cff0c0-46202fcd" class="design-label secondary">-</p>
+                    <p id="w-node-_3c536018-fb04-d158-ed98-0b4b44aa14a5-46202fcd" class="design-label secondary align-left">.card.padding-0</p>
+                    <div id="w-node-b5e1803a-b124-20b9-8711-593f6dd00fc3-46202fcd" class="card">
                       <div class="header">
                         <div class="icon-1x1-small">
                           <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 24 24" fill="none">
@@ -1004,7 +1047,7 @@ margin: 0rem !important;
                         <h2 class="header_label">Header label</h2>
                       </div>
                     </div>
-                    <div id="w-node-c649c2dc-0880-4abc-7eac-0bf628cbf89f-3dbb382a" class="card padding-0">
+                    <div id="w-node-c649c2dc-0880-4abc-7eac-0bf628cbf89f-46202fcd" class="card padding-0">
                       <div class="header relative">
                         <div class="icon-1x1-small">
                           <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 24 24" fill="none">
@@ -1014,7 +1057,7 @@ margin: 0rem !important;
                         <h2 class="header_label">Header label</h2>
                       </div>
                     </div>
-                    <div id="w-node-bf5a2d99-0e67-fb5e-da3d-637386196cc7-3dbb382a" class="card padding-0">
+                    <div id="w-node-bf5a2d99-0e67-fb5e-da3d-637386196cc7-46202fcd" class="card padding-0">
                       <div class="header icon-only">
                         <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 24 24" fill="none">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9932 5.13581C9.9938 2.7984 6.65975 2.16964 4.15469 4.31001C1.64964 6.45038 1.29697 10.029 3.2642 12.5604C4.89982 14.6651 9.84977 19.1041 11.4721 20.5408C11.6536 20.7016 11.7444 20.7819 11.8502 20.8135C11.9426 20.8411 12.0437 20.8411 12.1361 20.8135C12.2419 20.7819 12.3327 20.7016 12.5142 20.5408C14.1365 19.1041 19.0865 14.6651 20.7221 12.5604C22.6893 10.029 22.3797 6.42787 19.8316 4.31001C17.2835 2.19216 13.9925 2.7984 11.9932 5.13581Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -1041,10 +1084,10 @@ margin: 0rem !important;
                   <h3 class="design-system-h3">Index</h3>
                 </div>
                 <div class="components_grid lists">
-                  <p id="w-node-_8d1cb8cb-cd6f-8f36-483d-666749282946-3dbb382a" class="design-label secondary align-left">-</p>
-                  <p id="w-node-_8d1cb8cb-cd6f-8f36-483d-666749282948-3dbb382a" class="design-label secondary align-left">.tight</p>
-                  <p id="w-node-_8d1cb8cb-cd6f-8f36-483d-66674928294a-3dbb382a" class="design-label secondary align-left align-top">.index</p>
-                  <div id="w-node-fcb33d78-a342-127c-2972-ef17bfcee86a-3dbb382a" class="index">
+                  <p id="w-node-_8d1cb8cb-cd6f-8f36-483d-666749282946-46202fcd" class="design-label secondary align-left">-</p>
+                  <p id="w-node-_8d1cb8cb-cd6f-8f36-483d-666749282948-46202fcd" class="design-label secondary align-left">.tight</p>
+                  <p id="w-node-_8d1cb8cb-cd6f-8f36-483d-66674928294a-46202fcd" class="design-label secondary align-left align-top">.index</p>
+                  <div id="w-node-fcb33d78-a342-127c-2972-ef17bfcee86a-46202fcd" class="index">
                     <a href="#" class="button list-item align-left w-inline-block">
                       <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewbox="0 0 13 13" fill="none">
                           <path d="M3.25 9.75L9.75 3.25M9.75 7.58333V3.25H5.41667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -1074,7 +1117,7 @@ margin: 0rem !important;
                       <p class="button_label mono text-color-primary">primary.label</p>
                     </a>
                   </div>
-                  <div id="w-node-_12637e50-4201-800c-7e80-7ca653c15dd1-3dbb382a" class="index tight">
+                  <div id="w-node-_12637e50-4201-800c-7e80-7ca653c15dd1-46202fcd" class="index tight">
                     <div class="index_item">
                       <div class="index_icon">
                         <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 11 11" fill="none">
@@ -1163,24 +1206,24 @@ margin: 0rem !important;
                   <h3 class="design-system-h3">Badges</h3>
                 </div>
                 <div class="components_grid lists">
-                  <p id="w-node-ae20f47c-fb08-79b5-e3aa-d96b3ed2e974-3dbb382a" class="design-label secondary">-</p>
-                  <p id="w-node-ae20f47c-fb08-79b5-e3aa-d96b3ed2e976-3dbb382a" class="design-label secondary">-</p>
-                  <p id="w-node-_020818f2-e306-5b8b-fc40-3186646e5ec9-3dbb382a" class="design-label secondary">-</p>
-                  <p id="w-node-b599773c-b66d-3657-bf17-351ddb39f39d-3dbb382a" class="design-label secondary">-</p>
-                  <p id="w-node-_2ebb52fb-1f11-3530-1415-869a9e46bf0e-3dbb382a" class="design-label secondary">-</p>
-                  <p id="w-node-_074c2a74-747b-ea5c-fa8d-220deb069457-3dbb382a" class="design-label secondary">.cta</p>
-                  <p id="w-node-ae20f47c-fb08-79b5-e3aa-d96b3ed2e978-3dbb382a" class="design-label secondary align-left align-top">.badge-logo</p>
-                  <p id="w-node-_6487a1ca-73a1-f9c4-41bc-15d3858db200-3dbb382a" class="design-label secondary align-left align-top">.badge-button</p>
-                  <div id="w-node-_508f41be-2b4e-1842-3e52-c596ef62d649-3dbb382a" class="badge-logo">
+                  <p id="w-node-ae20f47c-fb08-79b5-e3aa-d96b3ed2e974-46202fcd" class="design-label secondary">-</p>
+                  <p id="w-node-ae20f47c-fb08-79b5-e3aa-d96b3ed2e976-46202fcd" class="design-label secondary">-</p>
+                  <p id="w-node-_020818f2-e306-5b8b-fc40-3186646e5ec9-46202fcd" class="design-label secondary">-</p>
+                  <p id="w-node-b599773c-b66d-3657-bf17-351ddb39f39d-46202fcd" class="design-label secondary">-</p>
+                  <p id="w-node-_2ebb52fb-1f11-3530-1415-869a9e46bf0e-46202fcd" class="design-label secondary">-</p>
+                  <p id="w-node-_074c2a74-747b-ea5c-fa8d-220deb069457-46202fcd" class="design-label secondary">.cta</p>
+                  <p id="w-node-ae20f47c-fb08-79b5-e3aa-d96b3ed2e978-46202fcd" class="design-label secondary align-left align-top">.badge-logo</p>
+                  <p id="w-node-_6487a1ca-73a1-f9c4-41bc-15d3858db200-46202fcd" class="design-label secondary align-left align-top">.badge-button</p>
+                  <div id="w-node-_508f41be-2b4e-1842-3e52-c596ef62d649-46202fcd" class="badge-logo">
                     <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="16" viewbox="0 0 11 16" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M1.34723 5.49429C0.536181 4.96112 0 4.03803 0 2.98856C0 1.33803 1.32627 0 2.96231 0H8.0377C9.67373 0 11 1.33803 11 2.98856C11 4.03803 10.4638 4.96112 9.65277 5.49429C10.4638 6.02747 11 6.95059 11 8.00003C11 9.65056 9.67373 10.9886 8.0377 10.9886H7.98369C7.21033 10.9886 6.50618 10.6896 5.97861 10.1999V12.9842C5.97861 14.6532 4.62332 16 2.97573 16C1.34306 16 0 14.6654 0 13.0114C0 11.962 0.536155 11.0389 1.34718 10.5057C0.536155 9.97256 0 9.04947 0 8.00003C0 6.95059 0.536181 6.02747 1.34723 5.49429ZM5.97861 8.00003C5.97861 9.11723 6.87633 10.0229 7.98369 10.0229H8.0377C9.14508 10.0229 10.0428 9.11723 10.0428 8.00003C10.0428 6.88283 9.14508 5.97717 8.0377 5.97717H7.98369C6.87633 5.97717 5.97861 6.88283 5.97861 8.00003ZM5.02139 5.97717H2.96231C1.85492 5.97717 0.957222 6.88283 0.957222 8.00003C0.957222 9.11496 1.8513 10.0192 2.95556 10.0229H2.95871H5.02139V5.97717ZM2.96231 10.9886C2.96006 10.9886 2.95781 10.9886 2.95556 10.9886C1.8513 10.9922 0.957222 11.8965 0.957222 13.0114C0.957222 14.1253 1.86499 15.0343 2.97573 15.0343C4.10138 15.0343 5.02139 14.1131 5.02139 12.9842V10.9886H2.96231ZM5.02139 5.01141H2.96231C1.85492 5.01141 0.957222 4.10576 0.957222 2.98856C0.957222 1.87136 1.85492 0.965706 2.96231 0.965706H5.02139V5.01141ZM8.0377 5.01141H5.97861V0.965706H8.0377C9.14508 0.965706 10.0428 1.87136 10.0428 2.98856C10.0428 4.10576 9.14508 5.01141 8.0377 5.01141Z" fill="currentColor"></path>
                       </svg></div>
                     <p class="badge-logo_label">Label</p>
                   </div>
-                  <div id="w-node-fac80dd8-905c-eb8f-9702-7c20308e56d5-3dbb382a" class="badge-button">
+                  <div id="w-node-fac80dd8-905c-eb8f-9702-7c20308e56d5-46202fcd" class="badge-button">
                     <p class="button_badge-label">soon</p>
                   </div>
-                  <div id="w-node-_49ca6252-66d8-6cae-620a-8bf0fc3f5c72-3dbb382a" class="badge-button cta">
+                  <div id="w-node-_49ca6252-66d8-6cae-620a-8bf0fc3f5c72-46202fcd" class="badge-button cta">
                     <p class="button_badge-label">soon</p>
                   </div>
                 </div>
@@ -1199,7 +1242,7 @@ margin: 0rem !important;
       </div>
     </main>
   </div>
-  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6a953a28edcdfa413dbb37f8" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6aa68626b99f851f46202fee" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <script>
 (function () {
