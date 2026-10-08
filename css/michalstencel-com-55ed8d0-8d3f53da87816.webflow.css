@@ -1620,7 +1620,7 @@ figcaption {
 
 .slider_slide.is-02 {
   background-image: url('../images/2x914x514-brandingi_12x@914x514-brandingi.avif'), linear-gradient(#0000, #0000);
-  background-position: 0 0, 0 0;
+  background-position: 50%, 0 0;
   background-size: auto, auto;
   transition: none;
 }
@@ -1668,7 +1668,7 @@ figcaption {
 
 .slider_slide.is-05.is-active {
   background-image: url('../images/1x1264x848-skadvisory_11x@1264x848-skadvisory.avif');
-  background-position: 0 0;
+  background-position: 50%;
   background-size: cover;
 }
 
